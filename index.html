@@ -498,6 +498,16 @@ footer a{
   transition:color var(--transition-base);
 }
 footer a:hover{color:var(--cream);}
+
+/* FAQ PROGRESSIVE DISCLOSURE */
+.faq-pd-item{border:1px solid var(--border-mid);border-radius:3px;overflow:hidden;margin-bottom:8px;background:var(--cream-deep);}
+.faq-pd-item summary{font-family:var(--font-display);font-size:16px;font-weight:500;padding:18px 24px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink);min-height:48px;line-height:1.4;}
+.faq-pd-item summary::-webkit-details-marker{display:none;}
+.faq-pd-item summary::after{content:'+';font-size:20px;color:var(--ink-muted);font-weight:300;flex-shrink:0;margin-left:16px;}
+.faq-pd-item[open] summary::after{content:'\2212';}
+.faq-pd-item[open] summary{border-bottom:1px solid var(--border);}
+.faq-pd-answer{padding:18px 24px 22px;font-size:14px;color:var(--ink-soft);line-height:1.75;}
+
 </style>
   <!-- Plausible Analytics — privacy-first, no cookies, no consent banner required -->
   <!-- Replace YOUR-DOMAIN with your Plausible site ID (e.g. kinspace.co) after signup at plausible.io -->
@@ -690,48 +700,36 @@ footer a:hover{color:var(--cream);}
   </div>
 
 
-  <!-- FAQ -->
+  <!-- FAQ — progressive disclosure -->
   <div class="wrap">
     <section class="faq-section" id="faq" aria-label="Frequently asked questions">
       <hr class="hr" style="margin-bottom:var(--space-20);">
       <div class="section-label">Common questions</div>
-      <div class="faq-grid">
-
-        <div class="faq-item">
-          <h3 class="faq-q">What is KINSPACE Ventures?</h3>
-          <p class="faq-a">A co-investment and co-founding model that brings capital, methodology, and market access alongside founders with lived experience in overlooked markets. Each venture is co-founded with the person the product was built for — not pitched to, not advised by, but built with. The ventures span AI, virtual reality, immersive learning, assistive technology, and inclusive product design.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-q">Who is Sara Liyanage-Denney?</h3>
-          <p class="faq-a">Founder and CEO of KINSPACE and KINSPACE Ventures, based on Gubbi Gubbi Country, Queensland. Rights-based intelligence consultant, executive coach, and keynote speaker with over a decade of work across Fortune 500 companies, UN agencies, and multinationals in Asia Pacific, North America, and Europe. Neurodivergent. Builds for people most systems were never designed to see.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-q">What emerging technologies does KINSPACE Ventures work with?</h3>
-          <p class="faq-a">Artificial intelligence, virtual reality, immersive learning, assistive technology, and universal design. Mogo is AI-built assistive technology for children's wellbeing — live in beta globally, with a deliberate design decision to keep the in-app experience AI-free for child safety. Bublii applies AI to coaching for difficult workplace conversations. KINSPACE has also worked with Deakin University on VR research, Equal Reality and People Tech Revolution on VR simulations, and Algorand on blockchain product development.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-q">How does KINSPACE Ventures co-found with emerging founders?</h3>
-          <p class="faq-a">By bringing the KINSPACE methodology, a decade of global market access, and co-investment alongside founders who have lived experience in a market that has been overlooked. Co-founders are the product authority — not advisors or recipients of funding. Sara works alongside each co-founder using the KINSPACE rights-based approach to surface what the market has missed and build for the person who was never in the room.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-q">What is the KINSPACE method and where has it been applied?</h3>
-          <p class="faq-a">A rights-based approach to intelligence, strategy, and organisational capability developed over more than a decade. Applied with Fortune 500 companies, UN agencies including WIPO, and multinationals across Asia Pacific, North America, and Europe. WIPO's Assistant Director General and DEI Lead described it as a game-changer. The same method that drives the consulting practice powers every KINSPACE venture.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-q">What does it mean to co-design technology with the people closest to the problem?</h3>
-          <p class="faq-a">The person with lived experience is the co-founder and design authority — not a research subject or focus group participant. Berlin, age 10, is Chief Design Authority of Mogo. Fatima Sampayo, who lives the fertility care gap, co-founded bébé bloom. Jo Rocca co-founded Bublii — AI coaching for the difficult workplace conversations most people avoid. Universal design is embedded from day one, not retrofitted. Technology built this way redistributes power and agency to the people who need it most.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-q">Why does KINSPACE Ventures focus on neurodivergent founders and universal design?</h3>
-          <p class="faq-a">Because the data is clear and the gap is real. 72% of founders report a diagnosis of mental health condition or neurodivergence <span class="stat-source">(Freeman et al., 2018)</span>. 54% of neurodivergent entrepreneurs felt starting their own business was the only way they could make money, and 96% report experiencing discrimination because of their neurodivergence <span class="stat-source">(The Entrepreneurs Network &amp; Barclays Eagle Labs, 2024)</span>. These are not edge cases — they are the majority of founders, without the infrastructure to match. Universal design at KINSPACE means building for the most complex need in the room first, so what gets built works for everyone. Not an accessibility add-on. The founding principle.</p>
-        </div>
-
+      <div style="margin-top:var(--space-4);">
+        <details class="faq-pd-item">
+          <summary>What is KINSPACE Ventures?</summary>
+          <div class="faq-pd-answer">A co-investment and co-founding model that brings capital, methodology, and market access alongside founders with lived experience in overlooked markets. Each venture is co-founded with the person the product was built for — not pitched to, not advised by, but built with.</div>
+        </details>
+        <details class="faq-pd-item">
+          <summary>What emerging technologies does KINSPACE Ventures work with?</summary>
+          <div class="faq-pd-answer">Artificial intelligence, virtual reality, immersive learning, assistive technology, and universal design. Mogo is AI-built assistive technology for children. Bublii applies AI to coaching for difficult workplace conversations. KINSPACE has also worked with Deakin University on VR research, Equal Reality and People Tech Revolution on VR simulations, and Algorand on blockchain product development.</div>
+        </details>
+        <details class="faq-pd-item">
+          <summary>How does KINSPACE co-found with emerging founders?</summary>
+          <div class="faq-pd-answer">By bringing the KINSPACE methodology, a decade of global market access, and co-investment alongside founders who have lived experience in a market that has been overlooked. Co-founders are the product authority — not advisors or recipients of funding.</div>
+        </details>
+        <details class="faq-pd-item">
+          <summary>What is the KINSPACE method?</summary>
+          <div class="faq-pd-answer">A rights-based approach to intelligence, strategy, and organisational capability. Five questions in every room: who is most impacted, who is not speaking, who is not represented, how am I contributing to the problem, and how can I create space? Applied with Fortune 500 companies, UN agencies, and multinationals across four continents.</div>
+        </details>
+        <details class="faq-pd-item">
+          <summary>What does co-designing with lived experience mean?</summary>
+          <div class="faq-pd-answer">The person with lived experience is the co-founder and design authority — not a research subject or focus group participant. Berlin, age 10, is Chief Design Authority of Mogo. Fatima Sampayo co-founded b\xe9b\xe9 bloom. Jo Rocca co-founded Bublii. Universal design embedded from day one, not retrofitted.</div>
+        </details>
+        <details class="faq-pd-item">
+          <summary>Why does KINSPACE focus on neurodivergent founders?</summary>
+          <div class="faq-pd-answer">72% of founders report a diagnosis of mental health condition or neurodivergence. 54% of ND entrepreneurs felt starting their own business was the only way they could make money. 96% report experiencing discrimination. These are the majority of founders — without the infrastructure to match.</div>
+        </details>
       </div>
     </section>
   </div>
