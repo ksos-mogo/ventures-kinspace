@@ -6,11 +6,12 @@
 <title>KINSPACE Ventures — Co-invested, co-built with lived experience | Sara Liyanage-Denney</title>
 <meta name="description" content="KINSPACE Ventures co-founds emerging technology companies alongside people with lived experience in overlooked markets. Founded by Sara Liyanage-Denney, Queensland, Australia.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://kinspace.co/ventures">
+<link rel="canonical" href="https://ventures.kinspace.co">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kinspace.co/ventures">
+<meta property="og:url" content="https://ventures.kinspace.co">
+<meta property="og:image" content="https://ventures.kinspace.co/og-ventures.png">
 <meta property="og:title" content="KINSPACE Ventures — Co-invested, co-built with lived experience">
 <meta property="og:description" content="Capital, methodology, and market access — alongside founders with the lived experience to build what the market has missed. AI, VR, immersive learning, and inclusive technology.">
 <meta property="og:site_name" content="KINSPACE Ventures">
@@ -28,7 +29,7 @@
   "@type": "Organization",
   "name": "KINSPACE Ventures",
   "alternateName": "Kinspace Ventures",
-  "url": "https://kinspace.co/ventures",
+  "url": "https://ventures.kinspace.co",
   "parentOrganization": {
     "@type": "Organization",
     "name": "KINSPACE",
@@ -140,6 +141,7 @@
 :root {
   --ink:        #211306;
   --ink-soft:   #4D453C;
+  --ink-muted:  #7A7268;
   --cream:      #F4EDE5;
   --white:      #FFFFFF;
   --border:     #E0D6C8;
@@ -257,10 +259,9 @@ h1{
   grid-template-columns:200px 1fr 240px;
   gap:var(--space-8);
   padding:var(--space-12) 0;
-  border-top:1px solid var(--border);
   align-items:start;
 }
-.venture-row:last-child{border-bottom:1px solid var(--border);}
+.venture-row + .venture-row{border-top:1px solid var(--border);}
 @media(max-width:760px){.venture-row{grid-template-columns:1fr;gap:var(--space-3);}}
 
 .venture-name{
@@ -296,31 +297,6 @@ h1{
 .venture-link:hover{opacity:0.7;}
 .venture-link svg{flex-shrink:0;}
 
-/* ── PULL QUOTE ── */
-.pull-quotes{
-  padding:var(--space-16) 0;
-  border-top:1px solid var(--border);
-}
-.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);}
-@media(max-width:640px){.quote-grid{grid-template-columns:1fr;}}
-
-.quote-item{padding:var(--space-6) 0;}
-.quote-text{
-  font-family:var(--font-display);font-weight:400;
-  font-size:clamp(17px,2.2vw,22px);
-  line-height:1.45;letter-spacing:-0.005em;
-  color:var(--ink);
-  border-left:1px solid var(--border-mid);
-  padding-left:var(--space-6);
-  font-style:italic;
-}
-.quote-attr{
-  font-size:14px;color:var(--ink-soft);
-  margin-top:var(--space-4);
-  padding-left:var(--space-6);
-  font-weight:500;
-}
-
 /* ── ECOSYSTEM ── */
 .ecosystem{padding:var(--space-20) 0;}
 .eco-lede{
@@ -337,7 +313,7 @@ h1{
 @media(max-width:760px){.eco-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:480px){.eco-grid{grid-template-columns:1fr;}}
 
-.eco-group h4{
+.eco-group h3{
   font-family:var(--font-display);font-weight:500;
   font-size:15px;margin-bottom:var(--space-5);color:var(--ink);
 }
@@ -394,7 +370,7 @@ h1{
   box-shadow:0 2px 12px rgba(33,19,6,0.07),0 1px 3px rgba(33,19,6,0.04);
 }
 .snippet-quote blockquote{
-  font-family:var(--font-display);font-style:italic;
+  font-family:var(--font-display);font-style:normal;
   font-size:20px;line-height:1.6;color:var(--ink);
 }
 .snippet-quote cite{
@@ -439,35 +415,7 @@ h1{
 
 /* ── FAQ ── */
 .faq-section{padding:var(--space-8) 0 var(--space-24);}
-.faq-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:var(--space-16) var(--space-20);
-}
-@media(max-width:700px){.faq-grid{grid-template-columns:1fr;gap:var(--space-10);}}
-.faq-item{}
-.faq-item:last-child:nth-child(odd){grid-column:1 / -1;max-width:560px;}
-.faq-q{
-  font-family:var(--font-display);
-  font-weight:500;
-  font-size:clamp(16px,1.8vw,19px);
-  line-height:1.3;
-  letter-spacing:-0.01em;
-  color:var(--ink);
-  margin-bottom:var(--space-3);
-}
-.faq-a{
-  font-size:15px;
-  color:var(--ink-soft);
-  line-height:1.8;
-  margin-top:var(--space-1);
-}
-.stat-source{
-  font-size:12px;
-  color:var(--ink-soft);
-  opacity:0.7;
-  font-style:italic;
-}
+
 
 /* ── INLINE LINKS — AAA: underline always visible, ink on cream 14.2:1 ── */
 .inline-link{
@@ -481,7 +429,7 @@ h1{
 .inline-link:hover{opacity:0.65;}
 
 /* ── FOOTER ── */
-footer{background:var(--ink);color:var(--cream);padding:var(--space-10) 0;}
+footer{background:#1a1714;color:var(--cream);padding:var(--space-10) 0;}
 footer .wrap{
   display:flex;justify-content:space-between;
   flex-wrap:wrap;gap:var(--space-4);
@@ -510,8 +458,7 @@ footer a:hover{color:var(--cream);}
 
 </style>
   <!-- Plausible Analytics — privacy-first, no cookies, no consent banner required -->
-  <!-- Replace YOUR-DOMAIN with your Plausible site ID (e.g. kinspace.co) after signup at plausible.io -->
-  <!-- <script defer data-domain="YOUR-DOMAIN" src="https://plausible.io/js/script.js"></script> -->
+  <!-- <script defer data-domain="ventures.kinspace.co" src="https://plausible.io/js/script.js"></script> -->
 </head>
 <body>
 
@@ -535,12 +482,10 @@ footer a:hover{color:var(--cream);}
     <svg class="corner bl" viewBox="0 0 56 56" aria-hidden="true"><path d="M0 34 L0 56 L22 56" stroke="#211306" stroke-width="1" fill="none"/></svg>
     <svg class="corner br" viewBox="0 0 56 56" aria-hidden="true"><path d="M34 56 L56 56 L56 34" stroke="#211306" stroke-width="1" fill="none"/></svg>
     <div class="eyebrow">KINSPACE Ventures</div>
-    <h1>Co-invested, co-built.</h1>
+    <h1>Co-invested, co-built</h1>
     <p class="hero-sub">Capital, methodology, and market access — alongside the people with the vision and lived experience to build what the market has missed. Each venture is co-founded with the person the product was built for.</p>
   </div>
 </div>
-
-<hr class="hr">
 
 <main id="main">
 
@@ -548,6 +493,7 @@ footer a:hover{color:var(--cream);}
   <div class="wrap">
     <section class="ventures" id="ventures" aria-label="The ventures">
       <div class="section-label">The ventures</div>
+      <h2 style="font-family:var(--font-display);font-weight:500;font-size:clamp(22px,2.8vw,32px);line-height:1.2;letter-spacing:-0.01em;color:var(--ink);margin-bottom:var(--space-8);">Each venture co-founded with the person the product was built for</h2>
 
       <div class="venture-row">
         <div>
@@ -613,71 +559,15 @@ footer a:hover{color:var(--cream);}
     </section>
   </div>
 
-  <!-- ECOSYSTEM -->
-  <div class="wrap">
-    <section class="ecosystem" id="ecosystem" aria-label="The ecosystem">
-      <hr class="hr" style="margin-bottom:var(--space-20);">
-      <div class="section-label">The ecosystem</div>
-      <p class="eco-lede">KINSPACE Ventures are built with a global ecosystem of partners actively co-designing with the people closest to the problem — using technology to redistribute power and agency.</p>
-      <div class="eco-grid">
-        <div class="eco-group">
-          <h4>Emerging tech community</h4>
-          <ul>
-            <li>Emerging Tech Hub</li>
-            <li>WIET — Women in Emerging Tech</li>
-            <li>WiT — Women in Technology</li>
-            <li>ACS — Australian Computer Society</li>
-          </ul>
-        </div>
-        <div class="eco-group">
-          <h4>Accelerators &amp; programs</h4>
-          <ul>
-            <li>River City Labs Elevating Female Founders</li>
-            <li>Start Up On Ramp</li>
-            <li>SBE Evolve Accelerator</li>
-          </ul>
-        </div>
-        <div class="eco-group">
-          <h4>Coaching &amp; mentoring</h4>
-          <ul>
-            <li>Boosting Female Founders Initiative</li>
-            <li>TAFE QLD Small Business and Entrepreneurship</li>
-            <li>Rare Birds Mentoring</li>
-            <li>Executive Coaching — startups, scaleups, and senior leaders</li>
-          </ul>
-        </div>
-        <div class="eco-group">
-          <h4>Research &amp; technology</h4>
-          <ul>
-            <li>Deakin University — VR research</li>
-            <li>Equal Reality — VR simulations</li>
-            <li>People Tech Revolution — VR simulations</li>
-            <li>Algorand — blockchain product</li>
-          </ul>
-        </div>
-        <div class="eco-group">
-          <h4>Inclusion &amp; market access</h4>
-          <ul>
-            <li>World Blind Union</li>
-            <li>International Disability Alliance</li>
-            <li>Diversity &amp; Inclusion Conference</li>
-            <li>Austrade — global market access</li>
-            <li>River City Labs</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- KINSPACE ENTERPRISE SNIPPET -->
   <div class="wrap">
     <section class="enterprise-snippet" aria-label="KINSPACE Enterprise and Coaching">
       <div>
         <div class="snippet-label">KINSPACE Enterprise</div>
-        <h2 class="snippet-heading">The methodology behind every venture.</h2>
+        <h2 class="snippet-heading">The methodology behind every venture</h2>
         <p class="snippet-body">KINSPACE Ventures is one expression of the KINSPACE method — a rights-based approach to intelligence, strategy, and capability developed over a decade working with Fortune 500 companies, UN agencies, and multinationals across Asia Pacific, North America, and Europe.</p>
         <p class="snippet-body">The same method that powers the ventures is available to enterprise leaders and teams through KINSPACE coaching and consulting.</p>
-        <a class="snippet-link" href="https://kinspace.co" target="_blank" rel="noopener">
+        <a class="snippet-link" href="https://sara.kinspace.co/work" target="_blank" rel="noopener">
           KINSPACE Enterprise &amp; Coaching
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H5M10 2V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -691,11 +581,71 @@ footer a:hover{color:var(--cream);}
     </section>
   </div>
 
-  <!-- MODEL STATEMENT -->
+  <!-- ECOSYSTEM -->
   <div class="wrap">
-    <div class="model">
-      <p>The KINSPACE method is the asset I bring to every venture — methodology, market access, and capital, co-built alongside founders who have the lived experience to build what the market has missed. We build for the edges first. When it works for the person hardest to reach, it works better for everyone.</p>
-      <p class="model-attr">Sara Liyanage-Denney, Founder, KINSPACE Ventures</p>
+    <section class="ecosystem" id="ecosystem" aria-label="The ecosystem">
+      <div class="section-label">The ecosystem</div>
+      <h2 style="font-family:var(--font-display);font-weight:500;font-size:clamp(22px,2.8vw,32px);line-height:1.2;letter-spacing:-0.01em;color:var(--ink);margin-bottom:var(--space-5);">Built with partners who build with people</h2>
+      <p class="eco-lede">A global ecosystem actively co-designing with the people closest to the problem.</p>
+      <div class="eco-grid">
+        <div class="eco-group">
+          <h3>Emerging tech community</h3>
+          <ul>
+            <li>Emerging Tech Hub</li>
+            <li>WIET — Women in Emerging Tech</li>
+            <li>WiT — Women in Technology</li>
+            <li>ACS — Australian Computer Society</li>
+          </ul>
+        </div>
+        <div class="eco-group">
+          <h3>Accelerators &amp; programs</h3>
+          <ul>
+            <li>River City Labs Elevating Female Founders</li>
+            <li>Start Up On Ramp</li>
+            <li>SBE Evolve Accelerator</li>
+          </ul>
+        </div>
+        <div class="eco-group">
+          <h3>Coaching &amp; mentoring</h3>
+          <ul>
+            <li>Boosting Female Founders Initiative</li>
+            <li>TAFE QLD Small Business and Entrepreneurship</li>
+            <li>Rare Birds Mentoring</li>
+            <li>Executive Coaching — startups, scaleups, and senior leaders</li>
+          </ul>
+        </div>
+        <div class="eco-group">
+          <h3>Research &amp; technology</h3>
+          <ul>
+            <li>Deakin University — VR research</li>
+            <li>Equal Reality — VR simulations</li>
+            <li>People Tech Revolution — VR simulations</li>
+            <li>Algorand — blockchain product</li>
+          </ul>
+        </div>
+        <div class="eco-group">
+          <h3>Inclusion &amp; market access</h3>
+          <ul>
+            <li>World Blind Union</li>
+            <li>International Disability Alliance</li>
+            <li>Diversity &amp; Inclusion Conference</li>
+            <li>Austrade — global market access</li>
+            <li>River City Labs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- MODEL STATEMENT — with corner treatment -->
+  <div class="wrap">
+    <div class="bracket-frame" style="padding:48px 40px 40px;max-width:700px;margin:var(--space-16) 0;">
+      <svg class="corner tl" viewBox="0 0 56 56" aria-hidden="true"><path d="M0 22 L0 0 L22 0" stroke="#211306" stroke-width="1" fill="none"/></svg>
+      <svg class="corner tr" viewBox="0 0 56 56" aria-hidden="true"><path d="M34 0 L56 0 L56 22" stroke="#211306" stroke-width="1" fill="none"/></svg>
+      <svg class="corner bl" viewBox="0 0 56 56" aria-hidden="true"><path d="M0 34 L0 56 L22 56" stroke="#211306" stroke-width="1" fill="none"/></svg>
+      <svg class="corner br" viewBox="0 0 56 56" aria-hidden="true"><path d="M34 56 L56 56 L56 34" stroke="#211306" stroke-width="1" fill="none"/></svg>
+      <p style="font-family:var(--font-display);font-size:clamp(16px,1.8vw,19px);font-weight:400;line-height:1.55;color:var(--ink);">The KINSPACE method is the asset I bring to every venture — methodology, market access, and capital, co-built alongside founders who have the lived experience to build what the market has missed. We build for the edges first. When it works for the person hardest to reach, it works better for everyone.</p>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:var(--space-5);font-weight:500;">Sara Liyanage-Denney, Founder, KINSPACE Ventures</p>
     </div>
   </div>
 
@@ -703,7 +653,6 @@ footer a:hover{color:var(--cream);}
   <!-- FAQ — progressive disclosure -->
   <div class="wrap">
     <section class="faq-section" id="faq" aria-label="Frequently asked questions">
-      <hr class="hr" style="margin-bottom:var(--space-20);">
       <div class="section-label">Common questions</div>
       <div style="margin-top:var(--space-4);">
         <details class="faq-pd-item">
@@ -724,11 +673,11 @@ footer a:hover{color:var(--cream);}
         </details>
         <details class="faq-pd-item">
           <summary>What does co-designing with lived experience mean?</summary>
-          <div class="faq-pd-answer">The person with lived experience is the co-founder and design authority — not a research subject or focus group participant. Berlin, age 10, is Chief Design Authority of Mogo. Fatima Sampayo co-founded b\xe9b\xe9 bloom. Jo Rocca co-founded Bublii. Universal design embedded from day one, not retrofitted.</div>
+          <div class="faq-pd-answer">The person with lived experience is the co-founder and design authority — not a research subject or focus group participant. Berlin, age 10, is Chief Design Authority of Mogo. Fatima Sampayo co-founded bébé bloom. Jo Rocca co-founded Bublii. Universal design embedded from day one, not retrofitted.</div>
         </details>
         <details class="faq-pd-item">
           <summary>Why does KINSPACE focus on neurodivergent founders?</summary>
-          <div class="faq-pd-answer">72% of founders report a diagnosis of mental health condition or neurodivergence. 54% of ND entrepreneurs felt starting their own business was the only way they could make money. 96% report experiencing discrimination. These are the majority of founders — without the infrastructure to match.</div>
+          <div class="faq-pd-answer">We are the edge cases. 72% of founders report a mental health condition or neurodivergence. 96% report experiencing discrimination. When we build for the most complex brain in the room, we build better for everyone. We\'re not perfect, but we\'re actively progressing this — and that\'s the point.</div>
         </details>
       </div>
     </section>
@@ -756,7 +705,7 @@ footer a:hover{color:var(--cream);}
 <footer>
   <div class="wrap">
     <div class="brand">KINSPACE Ventures</div>
-    <div>kinspace.co/ventures · Part of KINSPACE — <a href="https://kinspace.co">kinspace.co</a> · Gubbi Gubbi Country, Australia</div>
+    <div>ventures.kinspace.co · Part of KINSPACE — <a href="https://kinspace.co">kinspace.co</a> · Gubbi Gubbi Country, Australia</div>
   </div>
 </footer>
 
